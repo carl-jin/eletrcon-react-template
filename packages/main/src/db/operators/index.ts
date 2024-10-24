@@ -1,7 +1,11 @@
+import { AccountOperator } from '@main/db/operators/AccountOperator';
+import { TaskOperator } from '@main/db/operators/TaskOperator';
 import { SettingsOperator } from '@main/db/operators/SettingsOperator';
 
 const operators = {
-  Settings: SettingsOperator,
+  Account: AccountOperator,
+  Task: TaskOperator,
+  Setting: SettingsOperator,
 };
 
 export type OperatorsType = {

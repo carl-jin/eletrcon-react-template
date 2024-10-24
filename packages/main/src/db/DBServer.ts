@@ -1,7 +1,9 @@
 import { operators as operatorsMap, OperatorsType } from '@main/db/operators';
 import { writeError } from '@main/utils/errors';
 import { formatDurationToS } from '@main/utils/utils';
-import { Settings } from './entity/Settings';
+import { Account } from './entity/Account.entity';
+import { Settings } from './entity/Settings.entity';
+import { Task } from './entity/Task.entity';
 import { ipcMain } from 'electron';
 import { get } from 'lodash';
 import sqlite3 from 'sqlite3';
@@ -22,7 +24,7 @@ class DBServerInstance {
     this.AppDataSource = new DataSource({
       type: 'sqlite',
       database: path,
-      entities: [Settings],
+      entities: [Account, Task, Settings],
       synchronize: true,
       logging: ['error', 'warn'],
       driver: sqlite3,
@@ -46,7 +48,7 @@ class DBServerInstance {
 
   //  启动时创建一些东西
   private async DBInit() {
-    await this.operators.Settings.autoCreateDefault();
+    await this.operators.Setting.autoCreateDefault();
   }
 
   public close() {

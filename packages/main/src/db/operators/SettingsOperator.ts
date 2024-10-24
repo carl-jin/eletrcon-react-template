@@ -1,4 +1,4 @@
-import { Settings } from '@main/db/entity/Settings';
+import { Settings } from '@main/db/entity/Settings.entity';
 import { DataSource, Repository } from 'typeorm';
 
 export class SettingsOperator {

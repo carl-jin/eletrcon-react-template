@@ -15,6 +15,11 @@ async function createWindow() {
       webviewTag: false, // The webview tag is not recommended. Consider alternatives like an iframe or Electron's BrowserView. @see https://www.electronjs.org/docs/latest/api/webview-tag#warning
       preload: join(app.getAppPath(), 'packages/preload/dist/index.mjs'),
     },
+    resizable: true,
+    minWidth: 1360,
+    width: 1360,
+    height: 767,
+    minHeight: 768,
   });
 
   /**
@@ -29,7 +34,9 @@ async function createWindow() {
     mainWindow?.show();
 
     if (import.meta.env.DEV) {
-      mainWindow?.webContents.openDevTools();
+      mainWindow?.webContents.openDevTools({
+        mode: 'bottom',
+      });
     }
   });
 
