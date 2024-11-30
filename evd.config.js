@@ -10,8 +10,8 @@ export default defineEVDConfig({
     packageJSON: 'package.json',
   },
   cloudflare: {
-    url: '',
-    token: ``,
+    url: 'https://auto-login-software-main.pages.dev',
+    token: `JnVMe6WzXThRx2veoHqtqIUV-oM6Jwm-FlPQElfr`,
     projectName: `auto-login-software-main`,
   },
   prebuiltConfig: {

@@ -20,6 +20,7 @@ const config = {
     'import.meta.env.REMOTE_URL': `"${
       isDevBranch() ? env.CLOUDFLARE_DEV_URL : env.CLOUDFLARE_MAIN_URL
     }"`,
+    'import.meta.env.isDev': process.env.MODE === 'development',
   },
   resolve: {
     alias: {

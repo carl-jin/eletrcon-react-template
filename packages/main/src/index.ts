@@ -46,17 +46,20 @@ app.on('activate', restoreOrCreateWindow);
 app
   .whenReady()
   .then(() => {
-    EVDInit({
-      remoteUrl: `https://auto-login-software-main.pages.dev`,
-      logo: `file://${join(app.getAppPath(), 'packages', 'main', 'dist', 'icon.png')}`,
-      onError(error) {
-        //  记录更新检测遇到的错误
-        writeError(error, 'evd');
-      },
-      onBeforeNewPkgInstall(next, version: string) {
-        next();
-      },
-    });
+    console.log(import.meta.env.isDev,1)
+    if (!import.meta.env.isDev) {
+      EVDInit({
+        remoteUrl: `https://auto-login-software-main.pages.dev`,
+        logo: `file://${join(app.getAppPath(), 'packages', 'main', 'dist', 'icon.png')}`,
+        onError(error) {
+          //  记录更新检测遇到的错误
+          writeError(error, 'evd');
+        },
+        onBeforeNewPkgInstall(next, version: string) {
+          next();
+        },
+      });
+    }
 
     return DBServer.init(path.join(app.getPath('userData'), 'db.sqlite')).then(() => {
       InitIPCHandler(IPC);
