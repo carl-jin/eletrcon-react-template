@@ -5,6 +5,8 @@
 ```bash
 $ rm -rf .git
 $ git init
+$ git add .
+$ git commit -m "feat:init"
 ```
 
 然后修改 `package.json` 中的 `name`
