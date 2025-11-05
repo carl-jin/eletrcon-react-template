@@ -1,7 +1,8 @@
 import { OperatorsType, DatabaseMessageResponseType } from '@mainTypes';
 import { ErrorMessage } from '@renderer/utils/message';
-import { dbMessage } from '#preload';
 import PCancelable from 'p-cancelable';
+
+const { dbMessage } = window;
 
 export async function injectDBClient(): Promise<void> {
   const structure: OperatorsType = await dbMessage('database_operate_structure_message');

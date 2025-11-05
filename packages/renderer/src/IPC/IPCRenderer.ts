@@ -1,5 +1,6 @@
 import { ErrorMessage } from '@renderer/utils/message';
-import { invoke, on } from '#preload';
+
+const { invoke, on } = window;
 
 type MessageObj<T> = {
   [K in keyof T]: (...args: any) => void;

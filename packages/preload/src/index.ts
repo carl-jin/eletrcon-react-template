@@ -1,9 +1,9 @@
 /**
  * @module preload
  */
-import { ipcRenderer } from 'electron';
+import { contextBridge, ipcRenderer } from 'electron';
 
-export { versions } from './versions';
+import { versions } from './versions';
 
 // @ts-ignore
 async function dbMessage(messageName: string, ...args) {
@@ -20,4 +20,8 @@ function invoke(...args: any) {
   return ipcRenderer.invoke(...args);
 }
 
-export { invoke, on, dbMessage };
+// Expose API to window object
+contextBridge.exposeInMainWorld('dbMessage', dbMessage);
+contextBridge.exposeInMainWorld('invoke', invoke);
+contextBridge.exposeInMainWorld('on', on);
+contextBridge.exposeInMainWorld('versions', versions);

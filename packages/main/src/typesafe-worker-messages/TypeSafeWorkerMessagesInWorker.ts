@@ -55,9 +55,8 @@ export function TypeSafeWorkerMessagesInWorker<
 
     callbackIncreaseId++;
 
-    //  @ts-ignore
     return isMainThread
-      ? Promise.resolve(void 0)
+      ? (Promise.resolve(void 0) as Promise<Awaited<ReturnType<WorkerMessage[T]>>>)
       : new Promise((res) => {
           callbackWaitingMap[callbackID] = res;
         });

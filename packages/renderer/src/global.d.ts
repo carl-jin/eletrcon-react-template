@@ -7,6 +7,10 @@ export declare global {
     db: OperatorsType;
     antdApp: useAppProps;
     IPC: typeof IPC;
+    // Preload API
+    dbMessage: (messageName: string, ...args: any[]) => Promise<any>;
+    invoke: (...args: any[]) => Promise<any>;
+    on: (...args: any[]) => any;
   }
   interface Promise<T> {
     cancel: Function;

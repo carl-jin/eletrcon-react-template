@@ -2,7 +2,6 @@ import react from '@vitejs/plugin-react';
 import { chrome } from '../../.electron-vendors.cache.json';
 import { description, version } from '../../package.json';
 import { join, resolve } from 'node:path';
-import { renderer } from 'unplugin-auto-expose';
 import { createHtmlPlugin } from 'vite-plugin-html';
 
 const PACKAGE_ROOT = __dirname;
@@ -56,9 +55,6 @@ const config = {
   },
   plugins: [
     react(),
-    renderer.vite({
-      preloadEntry: join(PACKAGE_ROOT, '../preload/src/index.ts'),
-    }),
     createHtmlPlugin({
       inject: {
         data: {

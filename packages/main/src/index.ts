@@ -46,7 +46,6 @@ app.on('activate', restoreOrCreateWindow);
 app
   .whenReady()
   .then(() => {
-    console.log(import.meta.env.isDev,1)
     if (!import.meta.env.isDev) {
       EVDInit({
         remoteUrl: `https://auto-login-software-main.pages.dev`,

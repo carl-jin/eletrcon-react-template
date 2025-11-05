@@ -1,6 +1,6 @@
 import './styles/tailwind.css';
-import './styles/global.less';
-import './styles/antd.less';
+import './styles/global.css';
+import './styles/antd.css';
 import 'antd/dist/reset.css';
 import { createRoot } from 'react-dom/client';
 import App from './App';

@@ -12,7 +12,7 @@ logger.transports.file.format = (info) => {
   info.timestamp = dayjs(info.date).unix();
   //  @ts-ignore
   info.id = info.timestamp + Math.ceil(Math.random() * 99999);
-  return JSON.stringify(info);
+  return [JSON.stringify(info)];
 };
 //  账号日志为 1m
 logger.transports.file.maxSize = 1024 * 1024;
