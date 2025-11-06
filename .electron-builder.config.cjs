@@ -15,6 +15,7 @@ module.exports = async function () {
     appId: 'com.simple-marker.autologinsoftware',
     artifactName: '自动登入.${version}-${arch}.${ext}',
     files: ['packages/**/dist/**', 'autoUpdateInstaller'],
+    electronVersion: '39.1.0',
     asar: false,
     mac: {
       category: 'public.app-category.utilities',

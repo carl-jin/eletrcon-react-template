@@ -1,6 +1,6 @@
 {
   "name": "fb-group-manager-software",
-  "description": "FB 找小组本地数据库软件",
+  "description": "自动登入",
   "version": "0.0.1",
   "private": true,
   "author": "CarlJin",
@@ -25,7 +25,8 @@
     "postinstall": "cross-env ELECTRON_RUN_AS_NODE=1 node scripts/update-electron-vendors.mjs",
     "format": "npx prettier --write \"**/*.{js,mjs,cjs,ts,mts,cts,tsx,ts,json}\"",
     "test": "node ./scripts/test.cjs",
-    "checkUpdate": "NPM_CHECK_INSTALLER=pnpm npm-check -u -i"
+    "checkUpdate": "NPM_CHECK_INSTALLER=pnpm npm-check -u -i",
+    "rename": "esno scripts/rename-project.ts"
   },
   "devDependencies": {
     "@ant-design/icons": "^6.1.0",
@@ -49,7 +50,7 @@
     "dotenv": "^17.2.3",
     "download": "^8.0.0",
     "electron": "^39.1.0",
-    "electron-builder": "^26.0.12",
+    "electron-builder": "^26.0.19",
     "esno": "^4.8.0",
     "globals": "^16.5.0",
     "happy-dom": "^20.0.10",
@@ -85,7 +86,7 @@
     "ghost-cursor-playwright": "^2.1.0",
     "lodash": "^4.17.21",
     "playwright-core": "^1.56.1",
-    "sqlite3": "^5.1.7",
+    "sqlite3": "=5.1.6",
     "totp-generator": "^2.0.0",
     "typeorm": "^0.3.27",
     "user-agents": "^1.1.669"
