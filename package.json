@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "private": true,
   "author": "CarlJin",
+  "homepage": "https://github.com/carl-jin/fb-group-manager-software",
   "main": "packages/main/dist/index.cjs",
   "scripts": {
     "serve": "esno scripts/watch.ts",
